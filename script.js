@@ -26,6 +26,7 @@ function oneDayFx(city){
     //date
     console.log(onedayobj.main.temp);
     //temp
+    console.log(onedayobj.main.humidity);
     //hum
     //wind
     //UV
