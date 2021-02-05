@@ -1,4 +1,14 @@
 var apiKey = "a974a19edac9a39df9bf53ab07ca4e39";
+//array to contain city
+//if we have data, get it from ls else use an empty array
+//checkit from ls
+//getls
+var movies;
+localStorage.getItem("cityWeather");
+console.log(localStorage.getItem("cityWeather"));
+if (localStorage.getItem("cityWeather")){
+    movies=JSON.parse(localStorage.getItem("cityWeather"));
+}else {movie=[]}
 
 
 //#inputArea
@@ -101,7 +111,6 @@ function oneDayFx(city){
 //#fiveDay
 
 function fiveDayFx(city){
-    //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
 
     var urlFiveDay="http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+apiKey+""
     console.log(urlFiveDay)
@@ -126,24 +135,87 @@ for (i = 0; i < 5; i++) {
     console.log(fiveDayobj.list[i*8].main.temp)
     console.log(fiveDayobj.list[i*8].main.humidity)
 
+    var div=$("<div>");
+    var temp=$("<p>");
+    temp.text(fiveDayobj.list[i*8].main.temp);
+    var humidity=$("<p>");
+    humidity.text(fiveDayobj.list[i*8].main.humidity);
+    
+    
+    // temp.text(fiveDayobj.name+" "+fiveDayobj.)
     /*
-         <div>
+        <div>
           <p>
            Date
           </p>
           <p>Temp</p>
           <p>Humidity</p>
-          <p><img src="hhtp"></p>
+          <p>
+            <img src="hhtp">
+          </p>
 
         </div>
          */
 
+        var day=$("<p>");
+        var icon=$("<p>");
+        var image=$("<img>");
          //#fiveDay
 }
         
 
       });
 }
+ // This function handles events where a movie button is clicked
+ $("#add-movie").on("click", function(event) {
+    event.preventDefault();
+    // This line grabs the input from the textbox
+    var movie = $("#movie-input").val().trim();
+    //mising oneDayfx, fiveDayFx
+    oneDayFx(movie)
+    fiveDayFx(movie)
+    // Adding movie from the textbox to our array
+    movies.push(movie);
+    localStorage.setItem("cityWeather", JSON.stringify(movies));
 
 
-fiveDayFx("Reno");
+    // Calling renderButtons which handles the processing of our movie array
+    renderButtons();
+  });
+
+  
+// Function for displaying movie data
+function renderButtons() {
+
+    // Deleting the movies prior to adding new movies
+    // (this is necessary otherwise you will have repeat buttons)
+    $("#buttons-view").empty();
+
+    // Looping through the array of movies
+    for (var i = 0; i < movies.length; i++) {
+
+      // Then dynamicaly generating buttons for each movie in the array
+      // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+      var a = $("<button>");
+      // Adding a class of movie-btn to our button
+      a.addClass("movie-btn");
+      // Adding a data-attribute
+      a.attr("data-name", movies[i]);
+      // Providing the initial button text
+      a.text(movies[i]);
+      // Adding the button to the buttons-view div
+      $("#buttons-view").append(a);
+    }
+
+     // Adding a click event listener to all elements with a class of "movie-btn"
+  $(".movie-btn").click(function(){
+    //grab city
+    var city = $(this).attr("data-name");
+    console.log(city)
+    //call five day and oneday
+    oneDayFx(city);
+    fiveDayFx(city);
+
+    
+      });
+  }
