@@ -3,7 +3,7 @@ var apiKey = "a974a19edac9a39df9bf53ab07ca4e39";
 //if we have data, get it from ls else use an empty array
 //checkit from ls
 //getls
-var movies;
+var movies=[];
 localStorage.getItem("cityWeather");
 console.log(localStorage.getItem("cityWeather"));
 if (localStorage.getItem("cityWeather")){
@@ -128,7 +128,7 @@ function fiveDayFx(city){
         var i;
 for (i = 0; i < 5; i++) {
     console.log(fiveDayobj.list[i*8].dt_txt)
-    console.log(moment(fiveDayobj).format('L'))
+    console.log(moment(fiveDayobj.list[i*8].dt_txt).format('L'))
     var iconurl = "http://openweathermap.org/img/w/" + fiveDayobj.list[i*8].weather[0].icon + ".png";
     console.log(iconurl)
 
@@ -146,7 +146,7 @@ for (i = 0; i < 5; i++) {
     /*
         <div>
           <p>
-           Date
+           Day
           </p>
           <p>Temp</p>
           <p>Humidity</p>
@@ -158,9 +158,20 @@ for (i = 0; i < 5; i++) {
          */
 
         var day=$("<p>");
+        day.text(moment(fiveDayobj.list[i*8].dt_txt).format('L'))
         var icon=$("<p>");
         var image=$("<img>");
+        image.attr("src", iconurl);
+
+        icon.append(image);
+
+        div.append(day)
+        div.append(temp)
+        div.append(humidity)
+        div.append(icon)
          //#fiveDay
+
+         $("#fiveDay").append(div)
 }
         
 
@@ -219,3 +230,7 @@ function renderButtons() {
     
       });
   }
+
+  renderButtons()
+  oneDayFx("reno")
+  fiveDayFx("reno")
