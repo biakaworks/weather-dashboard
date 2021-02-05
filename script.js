@@ -23,6 +23,7 @@ if (localStorage.getItem("cityWeather")){
 
 
 function oneDayFx(city){
+    $("#oneDay").empty()
 
     var oneURL="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"";
     console.log(oneURL)
@@ -49,8 +50,9 @@ function oneDayFx(city){
            
           
         var div=$("<div>");
+        var cid=$("<p>");
+        cid.text(onedayobj.name+" "+onedayobj.weather[0].icon+" "+moment().format('L'))
         var temp=$("<p>");
-        temp.text(onedayobj.name+" "+onedayobj.weather[0].icon+" "+moment().format('L'))
         var windSpeed=$("<p>");
        // windSpeed.text()
         var humidity=$("<p>");
@@ -58,6 +60,7 @@ function oneDayFx(city){
         var uv=$("<p>");
 
         //stick it all togheter here
+        div.append(cid)
         div.append(temp)
         div.append(windSpeed)
         div.append(humidity)
@@ -111,6 +114,7 @@ function oneDayFx(city){
 //#fiveDay
 
 function fiveDayFx(city){
+    $("#fiveDay").empty()
 
     var urlFiveDay="http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+apiKey+""
     console.log(urlFiveDay)
