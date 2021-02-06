@@ -11,17 +11,6 @@ if (localStorage.getItem("cityWeather")){
 }else {movie=[]}
 
 
-//#inputArea
-    //#submit
-    //#cityField
-
-//#btnArea
-
-//#oneDay
-
-//API KEY
-
-
 function oneDayFx(city){
     $("#oneDay").empty()
 
@@ -46,18 +35,17 @@ function oneDayFx(city){
 
         </div>
          */
-
-           
-          
         var div=$("<div>");
         var cid=$("<p>");
         cid.text(onedayobj.name+" "+onedayobj.weather[0].icon+" "+moment().format('L'))
         var temp=$("<p>");
+        temp.text()
         var windSpeed=$("<p>");
-       // windSpeed.text()
+        windSpeed.text(onedayobj.wind.speed)
         var humidity=$("<p>");
-        // humidy.text()
+        humidity.text()
         var uv=$("<p>");
+        uv.text()
 
         //stick it all togheter here
         div.append(cid)
@@ -120,10 +108,7 @@ function fiveDayFx(city){
     console.log(urlFiveDay)
     //calls every 3 hours, how to get to 24hour=3*8
     //run a forloop to do this 5 times (each iteration should be [i*8] so it is every24 hours)
-    //date
-    //icon
-    //temp
-    //hum
+
     $.ajax({
         url: urlFiveDay,
         method: "GET"
