@@ -5,6 +5,9 @@
 ## Description
 📖 The Weather Dashboard will allow you to look up a city and find out the current city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index.  You are also able to click on the cities your have searched to look at their 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity.
 
+## Deployed Site
+[Weather Dashboard Deployed Site](https://biakaworks.github.io/weather-dashboard/)
+
 ## Screenshot
 ![Weather Dashboard Screenshot](./weatherdashboardpreview.png)
 
@@ -15,6 +18,7 @@ This application is covered by the Mozilla license.
 
 ## Table of Contents
 - [Description](#description)
+- [Deployed Site](deployedsite)
 - [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Contributing](#contributing)
