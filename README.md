@@ -6,7 +6,7 @@
 📖 The Weather Dashboard will allow you to look up a city and find out the current city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index.  You are also able to click on the cities your have searched to look at their 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity.
 
 ## Screenshot
-![Weather Dashboard Screenshot](./Assets/weatherdashboardpreview.png)
+![Weather Dashboard Screenshot](./weatherdashboardpreview.png)
 
 ## License
 ![badge](https://img.shields.io/badge/license-Mozilla-brightgreen)
