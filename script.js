@@ -79,7 +79,7 @@ function oneDayFx(city){
 
         //uv: lon and lat=> second ajax call nested
         // http://api.openweathermap.org/data/2.5/uvi?lat='{lat}'&lon={lon}&appid={API key}
-        var uvURL="http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+apiKey+""
+        var uvURL="https://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+apiKey+""
         console.log(uvURL)
 
         $.ajax({
@@ -104,7 +104,7 @@ function oneDayFx(city){
 function fiveDayFx(city){
     $("#fiveDay").empty()
 
-    var urlFiveDay="http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+apiKey+""
+    var urlFiveDay="https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+apiKey+""
     console.log(urlFiveDay)
     //calls every 3 hours, how to get to 24hour=3*8
     //run a forloop to do this 5 times (each iteration should be [i*8] so it is every24 hours)
