@@ -8,6 +8,9 @@
 ## Deployed Site
 [Weather Dashboard Deployed Site](https://biakaworks.github.io/weather-dashboard/)
 
+## Video of Deployed App
+[Weather Dashboard Deployed Video](https://youtu.be/TYE3Gf2L8Xc)
+
 ## Screenshot
 ![Weather Dashboard Screenshot](./weatherdashboardpreview.png)
 
@@ -18,7 +21,8 @@ This application is covered by the Mozilla license.
 
 ## Table of Contents
 - [Description](#description)
-- [Deployed Site](deployedsite)
+- [Deployed Site](#deployedsite)
+- [Video of Deployed App](#videoofdeployedapp)
 - [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Contributing](#contributing)
