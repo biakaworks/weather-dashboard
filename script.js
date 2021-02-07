@@ -118,7 +118,7 @@ function fiveDayFx(city){
 for (i = 0; i < 5; i++) {
     console.log(fiveDayobj.list[i*8].dt_txt)
     console.log(moment(fiveDayobj.list[i*8].dt_txt).format('L'))
-    var iconurl = "http://openweathermap.org/img/w/" + fiveDayobj.list[i*8].weather[0].icon + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + fiveDayobj.list[i*8].weather[0].icon + ".png";
     console.log(iconurl)
 
     console.log(fiveDayobj.list[i*8].main.temp)
